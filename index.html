@@ -1,11 +1,23 @@
 <!doctype html>
 <html>
-  <link rel="stylesheet" href="styles.css" />
-  <div id="header"><h1>To DO List</h1></div>
-  <div class="container">
-    <form>
-      <input type="text" id="taskInput" placeholder="Enter a Task" />
-      <button id="addTaskButton">Add task</button>
-    </form>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <div class="header"><h1>To DO List</h1></div>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <form>
+          <input type="text" id="taskInput" placeholder="Enter a Task" />
+          <button id="addTaskButton" type="button">Add task</button>
+        </form>
+      </div>
+      <div>
+        <ul id="taskList"></ul>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>

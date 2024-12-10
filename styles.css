@@ -7,3 +7,11 @@ h1 {
   max-width: 250px;
   margin: 20px auto;
 }
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+#taskList {
+  border-radius: 12px;
+  background-color: palevioletred;
+}
