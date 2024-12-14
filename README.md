@@ -30,4 +30,5 @@ On reload, all tasks are restored to their last state.
 * Allow task editing.
 * Sync tasks across devices using a backend server
 
-![image](https://github.com/user-attachments/assets/9a7ee49f-5dc8-4826-8a40-25f3f8c8aa8c)
+![image](https://github.com/user-attachments/assets/b3e3d1b3-4df1-441c-a6f2-c8ac88a56688)
+
