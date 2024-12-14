@@ -1,17 +1,218 @@
-.container {
-  max-width: 250px;
-  margin: 20px auto;
+/* General Reset */
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(to bottom right, #ffe4e6, #f8f1f1);
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-h1 {
-  max-width: 250px;
-  margin: 20px auto;
+/* Header */
+.header {
+  text-align: center;
+  background: linear-gradient(to right, #ff7eb3, #ff758c);
+  color: white;
+  padding: 20px 0;
+  border-bottom: 3px solid #ff4a6e;
+  width: 90%;
+  max-width: 600px;
+  margin: 10px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Form */
+form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  background-color: #ff4a6e;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #ff758c;
+  transform: scale(1.05);
+}
+
+/* Task List */
+#taskList {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  border-radius: 12px;
+  background-color: #fffaf4;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#taskList li {
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  align-items: flex-start; /* Align items to the start */
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background-color: #fff4f4;
+  border: 1px solid #ffdedc;
+  transition: background-color 0.3s ease;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+#taskList li:hover {
+  background-color: #ffe9e8;
+}
+
 .completed {
   text-decoration: line-through;
-  color: gray;
+  color: #555;
+  background-color: #d4ffdd !important;
 }
-#taskList {
+.task-item li {
+  white-space: normal;
+  flex-grow: 1;
+  word-break: break-all;
+}
+
+/* Buttons in Task Items */
+#taskList li button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #ff758c;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+#taskList li button:hover {
+  background-color: #ff4a6e;
+  transform: scale(1.1);
+}
+
+/* Time and Date Styling */
+.task-item p {
+  margin: 5px 0 0; /* Space above the time/date */
+  font-size: 0.85rem;
+  color: #666;
+  text-align: start; /* Align to the left */
+  background-color: #fce4ec;
+  padding: 5px 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ensure it spans the full width */
+}
+
+.task-item {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  align-items: flex-start; /* Align items to the top */
+  gap: 10px;
+  border: 2px solid #ffced2;
   border-radius: 12px;
-  background-color: palevioletred;
+  padding: 10px;
+  background-color: #fff;
+  transition: transform 0.2s ease;
+  max-width: 100%; /* Prevent task item overflow */
+  margin: 10px 0px;
+}
+
+.task-item:hover {
+  transform: scale(1.02);
+  background-color: #ffe8ea;
+}
+
+.task-item li {
+  word-wrap: break-word; /* Break long words */
+  overflow-wrap: anywhere; /* Break long words anywhere */
+  white-space: normal; /* Allow text to wrap naturally */
+  flex-grow: 1; /* Use available space */
+  max-width: 100%; /* Prevent overflow */
+  overflow: hidden; /* Hide any unintended overflow */
+  text-overflow: ellipsis; /* Add ellipsis for really long unbroken words */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  form {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  input[type="text"] {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .task-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-item p {
+    text-align: left;
+    width: 100%;
+  }
+}
+p {
+  text-align: end !important;
 }
